@@ -4,8 +4,15 @@
   "description": "Simple project to document and test promises and $http",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify ./project/app/index.js -o ./project/dist/index.js"
   },
   "author": "Carlos Castillo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.9",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
 }
