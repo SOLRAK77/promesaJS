@@ -24,6 +24,9 @@ var restController = function($scope, $http, $timeout, userApiService){
 
     //console.log(userApiService.getUsers());
     $scope.dataFromService = userApiService.getUsers();
+    $scope.dataSingleUser = userApiService.getUserById(1234);
+
+    console.log($scope.dataSingleUser);
 
     $scope.process = "almost there"
 

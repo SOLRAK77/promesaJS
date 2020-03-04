@@ -15,19 +15,26 @@ console.log("App listeing  on port" + port);
 server.get('/api/users', function(req, res){
     //call DB
 
-    var users = [];
-    users.push({"name": "Carlos Castillo", "age": 43});
-    users.push({"name": "Adriana Ortiz", "age": 41});
-    users.push({"name": "Liliana Castillo", "age": 7});
-    users.push({"name": "Almendra Arcos", "age": 41});
+    if(req.query.id !== undefined){
+        console.log("Query by ID:" + req.query.id )
+        res.json({"id": req.query.id, "name": "Carlos Castillo", "age": 43});
+    }
+    else{
+        var users = [];
+        users.push({"name": "Carlos Castillo", "age": 43});
+        users.push({"name": "Adriana Ortiz", "age": 41});
+        users.push({"name": "Liliana Castillo", "age": 7});
+        users.push({"name": "Almendra Arcos", "age": 41});
 
 
-    var response = {
-        "Total Count" : users.length,
-        "users": users
-    };
+        var response = {
+            "Total Count" : users.length,
+            "users": users
+        };
 
-    res.json (response);
+        res.json (response);
+    }
+    
 })
 
 
