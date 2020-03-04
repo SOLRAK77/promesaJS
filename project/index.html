@@ -18,11 +18,8 @@
                         {{d.name}} - {{d.age}}
                     </div>        
                 </document-section>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+
                 <!--Calling REST using $thhp promises-->
                 {{process}}
                 <document-section data-title="Calling REST using $http emulate promises">
@@ -30,6 +27,14 @@
                         {{d.name}} - {{d.age}}
                     </div>        
                 </document-section>
+
+                <!-- Call http from service-->
+                <document-section data-title="Receiving data from Service calling REST API">
+                    <div ng-repeat="d in dataFromService.users">
+                        {{d.name}} - {{d.age}}
+                    </div>        
+                </document-section>
+        
             </div>
         </div>
         

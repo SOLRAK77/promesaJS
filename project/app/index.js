@@ -7,5 +7,8 @@ require('./app');
 //directive
 require('./document-section');
 
+//Services
+require('./user-api-service');
+
 //Controller
 require('./rest-controller');
