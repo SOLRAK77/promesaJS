@@ -11,6 +11,25 @@ server.use(dobyParser.json({type:'application/vdn.api+json'}));
 server.listen(port);
 console.log("App listeing  on port" + port);
 
+//user api
+server.get('/api/users', function(req, res){
+    //call DB
+
+    var users = [];
+    users.push({"name": "Carlos Castillo", "age": 43});
+    users.push({"name": "Adriana Ortiz", "age": 41});
+    users.push({"name": "Liliana Castillo", "age": 7});
+    users.push({"name": "Almendra Arcos", "age": 41});
+
+
+    var response = {
+        "Total Count" : users.length,
+        "users": users
+    };
+
+    res.json (response);
+})
+
 
 //application
 server.get('*',function(req, res){

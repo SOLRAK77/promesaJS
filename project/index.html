@@ -7,7 +7,19 @@
         <title>Document</title>
         <script src="./dist/index.js"></script>
     </head>
-    <body>
+    <body ng-controller="restController">
+        <h2 class="text-center">Documentation of $http and promises</h2>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <!--Calling REST using $thhp-->
+                <document-section data-title="Calling REST using $http">
+                    <div ng-repeat="d in data.users">
+                        {{d.name}} - {{d.age}}
+                    </div>        
+                </document-section>
+            </div>
+        </div>
         
     </body>
 </html>
