@@ -20,6 +20,18 @@
                 </document-section>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <!--Calling REST using $thhp promises-->
+                {{process}}
+                <document-section data-title="Calling REST using $http emulate promises">
+                    <div ng-repeat="d in data.users">
+                        {{d.name}} - {{d.age}}
+                    </div>        
+                </document-section>
+            </div>
+        </div>
         
     </body>
 </html>
