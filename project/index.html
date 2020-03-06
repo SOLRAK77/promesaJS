@@ -28,17 +28,28 @@
                     </div>        
                 </document-section>
 
-                <!-- Call http from service-->
+                <!-- refactor from controller to service -->
                 <document-section data-title="Receiving data from Service calling REST API">
                     <div ng-repeat="d in dataFromService.users">
                         {{d.name}} - {{d.age}}
                     </div>        
                 </document-section>
 
-                <!-- Call http from service-->
+                <!-- sending parameters on the GET call -->
                 <document-section data-title="Calling REST API with parameter">
                    {{dataSingleUser.user.id}} - {{dataSingleUser.user.name}} - {{dataSingleUser.user.age}}    
                 </document-section>
+
+
+                <!-- $q success promise-->
+                <document-section data-title="Returning Success Promise using $q">
+                    Asyc call executed: {{asynCallExecutedSuccess}}
+                 </document-section>
+
+                <!-- $q error promise-->
+                <document-section data-title="Returning error Promise using $q">
+                    Asyc call executed: {{asynCallExecutedError}}
+                 </document-section>
         
             </div>
         </div>

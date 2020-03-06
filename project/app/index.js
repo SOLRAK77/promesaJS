@@ -9,6 +9,7 @@ require('./document-section');
 
 //Services
 require('./user-api-service');
+require('./promise-service');
 
 //Controller
 require('./rest-controller');

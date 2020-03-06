@@ -3,7 +3,7 @@
 var app = require('./app');
 
 
-var restController = function($scope, $http, $timeout, userApiService){
+var restController = function($scope, $http, $timeout, userApiService, promiseService){
 
     $scope.data;
     $scope.process = "procesing.."
@@ -30,8 +30,31 @@ var restController = function($scope, $http, $timeout, userApiService){
 
     $scope.process = "almost there"
 
+
+    $scope.asynCallExecutedSuccess = false;
+    promiseService.asynCall(true).then(
+        function(data){
+        //success
+            $scope.asynCallExecutedSuccess = data;
+        }, 
+        function(error){
+        //error
+            $scope.asynCallExecutedSuccess = error;
+    });
+
+
+    promiseService.asynCall(false).then(
+        function(data){
+        //success
+            $scope.asynCallExecutedError = data;
+        }, 
+        function(error){
+        //error
+            $scope.asynCallExecutedError = error;
+    });
+
 };
 
-app.controller("restController",['$scope','$http','$timeout','userApiService', restController]);
+app.controller("restController",['$scope','$http','$timeout','userApiService', 'promiseService', restController]);
 
 module.exports= app;
